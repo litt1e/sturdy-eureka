@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Создать доску{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <form action="", method="POST">
+            <div class="field">
+                {{ form.title.errors }}
+                <label for="id_title">Название доски(не более 40 символов):</label>
+                {{ form.title }}
+            </div>
+            <div class="field", method="POST">
+                {{ form.short_title.errors }}
+                <label for="id_short_title">Ссылка на доску(не более 4 символов):</label>
+                {{ form.short_title }}
+            </div>
+            <input type="submit" value="создать">
+        </form>
+    {% else %}
+        <p>404<br/>page not found</p>
+    {% endif %}
+{% endblock %}

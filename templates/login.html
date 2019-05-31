@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Авторизация {% endblock %}
+
+{% block content %}
+
+    {% for error in errors %}
+        <br/>{{ error }}
+    {% endfor %}
+
+    {% if user.is_authenticated%}
+        Вали атсюдава, ты уже авторизирован
+    {% else %}
+
+        {{ user.get_username }}
+
+        <form action="", method="POST">
+            <div class="field">
+                {{ form.login.errors }}
+                <label for="id_nickname">логин:</label>
+                {{ form.login }}
+            </div>
+
+            <div class="field">
+                {{ form.password.errors }}
+                <label for="id_password">пароль:</label>
+                {{ form.password }}
+            </div>
+
+            <input type="submit" value="Войти">
+        <form>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block content %}
+    <form action="", method="POST">
+        <div class="field">
+            {{ form.nickname.errors }}
+            <label for="id_nickname">никнейм:</label>
+            {{ form.nickname }}
+        </div>
+        <div class="field">
+            {{ form.email.errors}}
+            <label for="id_email">почта(не обязатлеьно):</label>
+            {{ form.email }}
+        </div>
+        <div class="field">
+            {{ form.password.errors }}
+            <label for="id_password">Пароль</label>
+            {{ form.password }}
+        </div>
+        <input type="submit" value="Регистрация">
+    </form>
+    {% for error in errors %}
+        <li>{{ eror }}</li>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Создать тред
+{% endblock %}
+
+{% block content %}
+    <form action="", method="POST">
+        <div class="field">
+            {{ form.title.errors }}
+            <label for="id_title">Тема:</label>
+            {{ form.title }}
+        </div>
+
+        <div class="field">
+            {{ form.text.errors }}
+            <label for="id_subject">Текст:</label>
+            {{ form.text}}
+        </div>
+
+        <input type="submit" value="Отправить">
+    </form>
+{% endblock %}
